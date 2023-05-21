@@ -8,11 +8,11 @@ class Continent {
     required this.code,
     required this.countries,
   });
-  // factory Continent.fromJson(Map<String, dynamic> json) => Continent(
-  //       name: name,
-  //       code: code,
-  //       countries: countries,
-  //     );
+  factory Continent.fromJson(Map<String, dynamic> json) => Continent(
+        name: json['name'],
+        code: json['code'],
+        countries: Countries.fromJson(json['countries']),
+      );
 }
 
 class Countries {
@@ -33,6 +33,16 @@ class Countries {
     required this.phone,
     required this.states,
   });
+
+  factory Countries.fromJson(Map<String, dynamic> json) => Countries(
+        code: json['code'],
+        name: json['name'],
+        languages: Languages.fromJson(json['languages']),
+        capital: json['capital'],
+        currency: json['currency'],
+        phone: json['phone'],
+        states: json['states'],
+      );
 }
 
 class Languages {
@@ -40,6 +50,8 @@ class Languages {
   Languages({
     required this.name,
   });
+  factory Languages.fromJson(Map<String, dynamic> json) =>
+      Languages(name: json['name']);
 }
 
 class States {
@@ -48,4 +60,6 @@ class States {
   States({
     required this.name,
   });
+  factory States.fromJson(Map<String, dynamic> json) =>
+      States(name: json['name']);
 }
