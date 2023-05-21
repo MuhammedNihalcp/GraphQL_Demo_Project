@@ -8,6 +8,11 @@ class Continent {
     required this.code,
     required this.countries,
   });
+  // factory Continent.fromJson(Map<String, dynamic> json) => Continent(
+  //       name: name,
+  //       code: code,
+  //       countries: countries,
+  //     );
 }
 
 class Countries {
