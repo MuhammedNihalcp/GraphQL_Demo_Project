@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class Continent {
   final String name;
   final String code;
