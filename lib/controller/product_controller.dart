@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:graph_ql_sample/service/county_service.dart';
 import 'package:graph_ql_sample/service/product_service.dart';
 
 import '../model/product_model.dart';
