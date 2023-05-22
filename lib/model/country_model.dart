@@ -1,7 +1,9 @@
+import 'dart:math';
+
 class Continent {
   final String name;
   final String code;
-  Countries countries;
+  List<Countries> countries;
 
   Continent({
     required this.name,
@@ -11,18 +13,22 @@ class Continent {
   factory Continent.fromJson(Map<String, dynamic> json) => Continent(
         name: json['name'],
         code: json['code'],
-        countries: Countries.fromJson(json['countries']),
+        countries: List<Countries>.from(
+          json['countries'].map(
+            (e) => Continent.fromJson(json),
+          ),
+        ),
       );
 }
 
 class Countries {
   final String code;
   final String name;
-  Languages languages;
+  List<Languages> languages;
   final String capital;
   final String currency;
   final String phone;
-  States states;
+  List<States> states;
 
   Countries({
     required this.code,
@@ -37,11 +43,19 @@ class Countries {
   factory Countries.fromJson(Map<String, dynamic> json) => Countries(
         code: json['code'],
         name: json['name'],
-        languages: Languages.fromJson(json['languages']),
+        languages: List<Languages>.from(
+          json['languages'].map(
+            (e) => Languages.fromJson(json['languages']),
+          ),
+        ),
         capital: json['capital'],
         currency: json['currency'],
         phone: json['phone'],
-        states: json['states'],
+        states: List<States>.from(
+          json['languages'].map(
+            (e) => Languages.fromJson(json['states']),
+          ),
+        ),
       );
 }
 
