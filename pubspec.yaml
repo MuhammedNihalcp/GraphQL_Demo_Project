@@ -38,6 +38,7 @@ dependencies:
   graphql_flutter: 5.1.2
   flutter_speed_dial: ^6.2.0
   auto_route: ^7.1.0
+  get: ^4.6.5
 
 dev_dependencies:
   flutter_test:

@@ -1,8 +1,9 @@
 import 'package:graph_ql_sample/graphql/graphql_string.dart';
+import 'package:graph_ql_sample/model/country_model.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class CountryService {
-  Future<List?> getCountries() async {
+  Future<List<Continent>?> getCountries() async {
     final HttpLink countryLink =
         HttpLink('https://countries.trevorblades.com/');
     GraphQLClient graphQLClient = GraphQLClient(

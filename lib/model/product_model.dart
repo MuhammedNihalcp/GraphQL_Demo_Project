@@ -11,11 +11,12 @@ class Edges {
 
   Edges({required this.node});
   factory Edges.fromJson(Map<String, dynamic> json) => Edges(
-          node: List<Node>.from(
-        json['node'].map(
-          (e) => Node.fromJson(json),
+        node: List<Node>.from(
+          json['node'].map(
+            (e) => Node.fromJson(json),
+          ),
         ),
-      ));
+      );
 }
 
 class Node {
