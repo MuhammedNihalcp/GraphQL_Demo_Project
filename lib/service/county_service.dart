@@ -26,8 +26,11 @@ class CountryService {
         log(queryResult.exception.toString());
       }
 
-      final countryresult = queryResult.data?['continent']?['countries'];
-      return countryresult ?? [];
+      List<Countries> countryresult =
+          (queryResult.data?['continent']?['countries'] as List)
+              .map((e) => Countries.fromJson(e))
+              .toList();
+      return countryresult;
     } on GraphQLError catch (e) {
       log(e.message);
     }
