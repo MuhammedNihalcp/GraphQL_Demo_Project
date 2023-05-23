@@ -20,21 +20,21 @@ class ScreenContinent extends StatelessWidget {
       ),
       body: SafeArea(
           child: GetBuilder(
-            init: countriesController,
-            builder: (controller) {
-              return ListView.separated(
-        itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(countriesController.countriesList[index].name),
-              );
-        },
-        separatorBuilder: (context, index) {
-              return const SizedBox();
-        },
-        itemCount: 10,
-      );
-            }
-          )),
+              init: countriesController,
+              builder: (controller) {
+                return ListView.separated(
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title:
+                          Text(countriesController.countriesList[index].name),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return const SizedBox();
+                  },
+                  itemCount: countriesController.countriesList.length,
+                );
+              })),
       // Query(
       //   options: QueryOptions(
       //     document: gql(readRepositoriesCountry),
