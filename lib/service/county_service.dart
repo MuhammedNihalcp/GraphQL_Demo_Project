@@ -19,7 +19,7 @@ class CountryService {
       QueryResult queryResult = await graphQLClient.query(
         QueryOptions(
             fetchPolicy: FetchPolicy.networkOnly,
-            document: gql(readRepositoriesProduct),
+            document: gql(readRepositoriesCountry),
             variables: const {"code": "AS"}),
       );
       if (queryResult.hasException) {
