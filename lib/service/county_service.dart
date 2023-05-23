@@ -18,9 +18,9 @@ class CountryService {
 
       QueryResult queryResult = await graphQLClient.query(
         QueryOptions(
-          fetchPolicy: FetchPolicy.networkOnly,
-          document: gql(readRepositoriesProduct),
-        ),
+            fetchPolicy: FetchPolicy.networkOnly,
+            document: gql(readRepositoriesProduct),
+            variables: const {"code": "AS"}),
       );
       if (queryResult.hasException) {
         log(queryResult.exception.toString());
@@ -28,7 +28,7 @@ class CountryService {
 
       final countryresult = queryResult.data?['continent']?['countries'];
       return countryresult ?? [];
-    }on GraphQLError catch (e) {
+    } on GraphQLError catch (e) {
       log(e.message);
     }
     return null;
