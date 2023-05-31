@@ -1,10 +1,9 @@
-import 'dart:developer';
+// ignore_for_file: must_be_immutable
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graph_ql_sample/controller/country_controller.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 
 @RoutePage()
 class ScreenContinent extends StatelessWidget {
@@ -19,22 +18,23 @@ class ScreenContinent extends StatelessWidget {
         title: const Text('Countries'),
       ),
       body: SafeArea(
-          child: GetBuilder(
-              init: countriesController,
-              builder: (controller) {
-                return ListView.separated(
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      title:
-                          Text(countriesController.countriesList[index].name),
-                    );
-                  },
-                  separatorBuilder: (context, index) {
-                    return const SizedBox();
-                  },
-                  itemCount: countriesController.countriesList.length,
+        child: GetBuilder(
+          init: countriesController,
+          builder: (controller) {
+            return ListView.separated(
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(countriesController.countriesList[index].name),
                 );
-              })),
+              },
+              separatorBuilder: (context, index) {
+                return const SizedBox();
+              },
+              itemCount: countriesController.countriesList.length,
+            );
+          },
+        ),
+      ),
       // Query(
       //   options: QueryOptions(
       //     document: gql(readRepositoriesCountry),

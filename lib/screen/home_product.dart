@@ -1,9 +1,9 @@
-import 'dart:developer';
+// ignore_for_file: prefer_const_constructors_in_immutables
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:graph_ql_sample/graphql/graphql_string.dart';
-import 'package:graph_ql_sample/service/product_service.dart';
+
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 @RoutePage()

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -27,7 +29,7 @@ class HomePage extends StatelessWidget {
         activeBackgroundColor: Colors.red,
         childrenButtonSize: const Size.square(70),
         // animatedIcon: AnimatedIcons.add_event,
-        activeChild: Icon(Icons.close),
+        activeChild: const Icon(Icons.close),
         curve: Curves.fastOutSlowIn,
         gradientBoxShape: BoxShape.circle,
         child: Icon(Icons.add),

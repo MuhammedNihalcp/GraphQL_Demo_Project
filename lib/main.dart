@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graph_ql_sample/router/app_router.dart';
-import 'package:graph_ql_sample/screen/home_country.dart';
-import 'package:graph_ql_sample/screen/home_product.dart';
+
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() async {
